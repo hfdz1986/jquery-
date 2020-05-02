@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<button>按钮</button>
+
+<script src='jquery1.7.js'></script>
+<script>
+$(function(){
+
+
+	$("button").click(function(){
+
+		$.ajax({
+
+			url:"index.php",
+			type:"get",
+			//dataType:"json",//返回一个json格式的数据
+			success:function(data){
+				var obj = eval(data);
+				console.log(obj[0].user);
+			},
+			error:function(err){
+				console.log(err);
+			}
+
+		})
+
+	})
+
+})	
+</script>
+</body>
+</html>

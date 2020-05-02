@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<button>按钮</button>
+
+<script src='jquery1.7.js'></script>
+<script>
+$(function(){
+
+
+	$("button").click(function(){
+
+		$.ajax({
+
+			url:"http://v.juhe.cn/weather/index?cityname=%E5%8C%97%E4%BA%AC&dtype=&format=&key=a993eef2505209fb69b3e850f5908c26",
+			dataType:"jsonp",
+			success:function(data){
+				console.log(data.result.today.city);
+			}
+
+		})
+
+	})
+
+})	
+</script>
+</body>
+</html>
